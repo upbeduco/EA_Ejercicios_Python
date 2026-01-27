@@ -4,7 +4,6 @@ This is an educational set of examples and exercises about data structures and a
 
 ## Project Context
 
-- **Primary Reference**: Sedgewick & Wayne - Algorithms, 4th Edition (https://algs4.cs.princeton.edu/home/)
 - **Primary Libraries**: 
   - `algs4` (Python port of textbook algorithms)
   - `introcs` (Princeton's standard I/O libraries)
@@ -58,10 +57,39 @@ This is an educational set of examples and exercises about data structures and a
       assert len(obj) == 0
   ```
 
+## Algorithmic Documentation
+
+- Each algorithm implementation should document its **time complexity** and **space complexity** in the docstring:
+  ```python
+  def insertion_sort(a: list) -> None:
+      """Sort array in-place using insertion sort.
+
+      Complexity
+      ----------
+      Time : O(n^2) worst case, O(n) best case (already sorted)
+      Space : O(1) auxiliary
+      """
+  ```
+
+- Document key **invariants** and **preconditions/postconditions** as comments at critical points in the algorithm
+- When an implementation involves a non-obvious design choice, add a brief comment explaining *why*, not just *what*
+
+## Learning-Oriented Practices
+
+- Prefer clarity over cleverness: educational code should be easy to read and trace step-by-step
+- Avoid one-liners or overly compact expressions when a more explicit version aids understanding
+- Include print statements or logging (guarded behind `if __name__ == '__main__':`) that illustrate the algorithm's behavior on sample inputs
+- When exercises build on previous modules, import from earlier implementations rather than re-implementing from scratch
+- Structure test cases to demonstrate **edge cases** (empty input, single element, duplicates, already sorted, reverse sorted) alongside normal cases
+
+## Version Control Practices
+
+- Write meaningful commit messages that describe *what* was implemented and *which exercise/topic* it relates to
+- Commit working code only; do not commit broken or half-finished implementations to the main branch
+- Use branches for experimental or in-progress work
+
 ## Dependencies & Environment
 
 - Python 3.10+ (Note: pygame only supports up to Python 3.10)
-- Required packages: `algs4`, `numpy`, `pygame`
+- Required packages: `algs4`, `numpy`, `pygame` (optional for GUI utilities)
 - Linux users must have `python3-tk` installed
-- Additional resources: Download and install `introcs-1.0` from https://introcs.cs.princeton.edu/python/code/dist/introcs-1.0.zip
-
